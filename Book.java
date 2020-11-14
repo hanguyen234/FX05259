@@ -1,9 +1,10 @@
+// Dinh nghia cac thuoc tinh cua sach
 public class Book {
     private String id;
     private String title;
     private String author;
     private Boolean isBorrowed;
-
+    // ham constructor
     public Book (String id, String title, String author, Boolean isBorrowed) {
         this.id = id;
         this.title = title;
@@ -14,12 +15,6 @@ public class Book {
     public String getId() {
         return id;
     }
-
-    /*
-    public void setId(String id) {
-        this.id = id;
-    }
-     */
 
     public String getTitle() {
         return title;
@@ -36,6 +31,12 @@ public class Book {
     /*
     public void setTitle() {
         this.title = title;
+    }
+     */
+
+    /*
+    public void setId(String id) {
+        this.id = id;
     }
      */
 
