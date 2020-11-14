@@ -1,6 +1,9 @@
+// dieu khien luong chinh cua chuong trinh
 public class Manager {
     public static void main(String[] args) {
+        // tao doi tuong booklist de co the truy cap cac phuong thuc trong class Booklist
         BookList bookList = new BookList();
+
         System.out.println("Welcome to the online book library");
         int choice;
         while (BookList.isExit) {
@@ -26,4 +29,3 @@ public class Manager {
         }
     }
 }
-
