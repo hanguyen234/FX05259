@@ -1,8 +1,11 @@
+// class chua danh sach cac sach va cac phuong thuc xu ly
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 public class BookList {
+    // ArrayList chua sach da duoc them
     List<Book> myBooks = new ArrayList<>();
+    // ham lay gia tri so nguyen trong gioi han
     public static int numRange(int min, int max, String message) {
         Scanner input = new Scanner(System.in);
         boolean isNum = true;
@@ -24,7 +27,7 @@ public class BookList {
         } while (isNum);
         return num;
     }
-
+    // phuong thuc nhap thong tin ve sach
     public void add() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter information for the new book:");
@@ -47,15 +50,15 @@ public class BookList {
         addToList(id.toUpperCase(), title, author, isBorrowed);
         System.out.println("A new book has been added");
     }
-
+    // phuong thuc them sach vao ArrayList
     public void addToList(String id, String title, String author, Boolean isBorrowed) {
         Book book = new Book(id.toUpperCase(), title, author, isBorrowed);
         myBooks.add(book);
     }
-
+    // phuong thuc tim sach trong ArrayList
     public void search() {
         Scanner input = new Scanner(System.in);
-        List<Book> booksFound = new ArrayList<>();
+        List<Book> booksFound = new ArrayList<>(); // chua cac sach duoc tim thay
         System.out.println("Enter book title to search.");
         System.out.print("Book title: ");
         String searchKey = input.nextLine();
@@ -73,21 +76,24 @@ public class BookList {
             }
         }
     }
-
+    // hien thi thong tin tat ca cac sach
     public void display () {
         System.out.println(String.format("%-10s%-20s%-20s%-20s", "Id", "Title", "Author", "isBorrowed"));
         for (Book book : myBooks) {
             System.out.println(book.toString());
         }
     }
-
+    // phuong thuc muon sach theo id
     public void borrow() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter book ID to borrow:");
         System.out.print("Book ID: ");
         String searchKey = input.nextLine();
+        // duyet qua tung cuon sach trong ArrayList
         for (Book aBook : myBooks) {
+            // neu id sach giong voi id nhap
             if (aBook.getId().equalsIgnoreCase(searchKey)) {
+                // neu sach da duoc muon
                 if (aBook.getBorrowed().equals(true)) {
                     System.out.println("You can not borrow this book. The book has been borrowed");
                     return;
