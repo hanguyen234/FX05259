@@ -1,0 +1,12 @@
+﻿- Nhiệm vụ 5: Như ta đã biết, với cách biểu diễn RGB mỗi kênh màu được biểu diễn bởi 1 byte. Do đó giá trị 1 kênh màu nằm trong khoảng từ 0..255. 
+Nhiệm vụ này yêu cầu bạn đảo ngược giá trị từng kênh màu, tức là lấy 255 - giá trị kênh màu
+
+image = new SimpleImage("flowers.jpg");
+
+for (pixel: image) {
+  pixel.setRed(255 - pixel.getRed());
+  pixel.setGreen(255 - pixel.getGreen());
+  pixel.setBlue(255 - pixel.getBlue());
+}
+
+print(image);

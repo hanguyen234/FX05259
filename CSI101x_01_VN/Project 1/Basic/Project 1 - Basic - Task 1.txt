@@ -1,0 +1,11 @@
+﻿- Nhiệm vụ 1: Giảm 30% độ sáng của ảnh flowers.jpg
+
+image = new SimpleImage("flowers.jpg");
+
+for (pixel: image) {
+  pixel.setRed(pixel.getRed() * 0.7);
+  pixel.setGreen(pixel.getGreen() * 0.7);
+  pixel.setBlue(pixel.getBlue() * 0.7);
+}
+
+print(image);
