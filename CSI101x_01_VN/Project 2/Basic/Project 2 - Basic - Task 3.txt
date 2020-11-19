@@ -1,0 +1,34 @@
+﻿- Nhiệm vụ 3: Mừng chiến thắng đội tuyển U23 Việt Nam tại vòng chung kết U23 Châu Á, hãy dùng kỹ thuật BlueScreen đã học trong bài để lồng khung ảnh chúc mừng cho ảnh avatar của bạn.
+
+image = new SimpleImage("image3.png");
+back = new SimpleImage("thuongchau.jpg");
+back.setSameSize(image);
+
+for (pixel: image) {
+  avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3;
+  // your code here
+  if (pixel.getRed() == 255 && pixel.getGreen() == 255 && pixel.getBlue() == 255) {
+     pixel2 = back.getPixel(pixel.getX(), pixel.getY());
+     pixel.setRed(pixel2.getRed());
+     pixel.setGreen(pixel2.getGreen());
+     pixel.setBlue(pixel2.getBlue());
+  }  
+}
+print(image);
+
+
+image = new SimpleImage("image3.png");
+back = new SimpleImage("thuongchau.jpg");
+back.setSameSize(image);
+
+for (pixel: image) {
+  avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3;
+  // your code here
+  if (pixel.getRed() < avg*1.1 && pixel.getGreen() < avg*1.1 && pixel.getBlue() < avg*1.1){
+    pixel2 = back.getPixel(pixel.getX(), pixel.getY());
+    pixel.setRed(pixel2.getRed());
+    pixel.setGreen(pixel2.getGreen());
+    pixel.setBlue(pixel2.getBlue());
+  }
+}
+print(image);

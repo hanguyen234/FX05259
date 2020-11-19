@@ -1,0 +1,29 @@
+﻿- Nhiệm vụ 2: Tính giá trị trung bình các tông màu của toàn bộ ảnh, đồng thời xác định tình trạng của ảnh
+
+image = new SimpleImage("flowers.jpg");
+
+red = 0;
+green = 0;
+blue = 0;
+for (pixel: image) {
+  red += pixel.getRed();
+  green += pixel.getGreen();
+  blue += pixel.getBlue();
+}
+totalPixel = image.getWidth() * image.getHeight();
+avgRed = red/totalPixel;
+avgGreen = green/totalPixel;
+avgBlue = blue/totalPixel;
+avg = (avgRed + avgGreen + avgBlue)/3;
+
+print("Average Red: " + avgRed);
+print("Average Green: " + avgGreen);
+print("Average Blue: " + avgBlue);
+
+if(avg < 100){
+  print("too dark");
+}else if(avg > 155){
+  print("too light");
+}else{
+  print("normal");
+}

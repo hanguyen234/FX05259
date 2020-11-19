@@ -1,0 +1,11 @@
+﻿- Nhiệm vụ 4: Hãy biến một nửa dưới của ảnh flowers.jpg thành đen trắng.
+
+image = new SimpleImage("flowers.jpg");
+
+for (pixel: image){
+  if(pixel.getY() > image.getHeight()/2){
+    pixel.setGreen(pixel.getRed());
+    pixel.setBlue(pixel.getRed());
+  }
+}
+print(image);
