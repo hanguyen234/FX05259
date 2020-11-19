@@ -1,0 +1,13 @@
+﻿- Ở nhiệm vụ 4, làm cả ảnh thành ảnh đen trắng, tuy nhiên mức độ đen trắng trải theo hình thức gradient (tối dần hoặc sáng dần)
+
+image = new SimpleImage("flowers.jpg");
+for (pixel : image) {
+   avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3;
+   x = pixel.getX();
+   y = pixel.getY();
+   scale = x  / (image.getWidth() + image.getHeight() - x) ;
+   pixel.setRed(avg * scale);
+   pixel.setGreen(avg * scale);
+   pixel.setBlue(avg * scale);
+}
+print(image);

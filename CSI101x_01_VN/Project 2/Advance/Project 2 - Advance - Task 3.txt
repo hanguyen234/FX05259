@@ -1,0 +1,21 @@
+﻿- Tạo cơ chế đánh dấu watermark vào một ảnh bất kỳ
+
+image = new SimpleImage("watermark.jpg");
+print(image);
+back = new SimpleImage("flowers.jpg");
+back.setSameSize(image);
+for (pixel: image) {
+  avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3;
+  pixel2 = back.getPixel(pixel.getX(), pixel.getY());
+  if ( pixel.getRed() > avg * 0.8 ){
+    pixel.setRed(pixel2.getRed());
+    pixel.setGreen(pixel2.getGreen());
+    pixel.setBlue(pixel2.getBlue());
+  } else {
+    pixel.setRed((pixel.getRed() + pixel2.getRed()) / 1.7);
+    pixel.setGreen((pixel.getGreen() + pixel2.getGreen()) / 1.7);
+    pixel.setBlue((pixel.getBlue() + pixel2.getBlue()) / 1.7);
+  }
+}
+
+print(image);

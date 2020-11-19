@@ -1,0 +1,17 @@
+﻿- Làm nhiễu ảnh (có thể khôi phục lại) một ảnh bất kỳ
+
+image = new SimpleImage("flowers.jpg");
+for (pixel: image) {
+// lam nhieu anh
+ pixel.setRed(Math.round(Math.random() * 255));
+ pixel.setGreen(pixel.getGreen() / 20);
+ pixel.setBlue(pixel.getBlue() / 10);
+}
+print(image);
+// xu ly nhieu 
+for (pixel: image) {
+  pixel.setRed(0);
+  pixel.setGreen(pixel.getGreen() * 20);
+  pixel.setBlue(pixel.getBlue() * 10);
+}
+print(image);

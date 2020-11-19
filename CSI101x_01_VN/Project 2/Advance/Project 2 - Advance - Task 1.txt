@@ -1,0 +1,23 @@
+﻿- Ở nhiệm vụ 3, chèn thêm được tên của bạn vào hình ảnh
+
+image = new SimpleImage("image3.png");
+back = new SimpleImage("thuongchau.jpg");
+ten = new SimpleImage("ten.jpg");
+back.setSameSize(image);
+for (pixel: image) {
+  avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue())/3;
+  // your code here
+  if ( pixel.getBlue()> avg * 0.9 && pixel.getRed()> avg * 0.9){
+    pixel2 = back.getPixel(pixel.getX(), pixel.getY());
+    pixel.setRed(pixel2.getRed());
+    pixel.setGreen(pixel2.getGreen());
+    pixel.setBlue(pixel2.getBlue());
+  }
+  if ( pixel.getBlue() > avg * 0.8 && pixel.getRed()> avg * 0.8){
+    pixel3 = ten.getPixel(pixel.getX(), pixel.getY());
+    pixel.setRed(pixel3.getRed());
+    pixel.setGreen(pixel3.getGreen());
+    pixel.setBlue(pixel3.getBlue());
+  }
+}
+print(image);
