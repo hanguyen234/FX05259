@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project 4 - PRF192</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+        <style>
+            .slide {
+                width: 710px;
+                height: 400px;
+            }
+            
+            .slide:not(:first-child) {
+                display: none;
+            }
+            
+            .slideshow {
+                width: 710px;
+                height: 460px;
+                margin: 0 auto;
+                border: 1px solid red;
+                position: relative;
+                padding: 5px;
+            }
+
+            .fa {
+                position: absolute;
+                top: 30%;
+                color: #ccc;
+                text-shadow: 5px 5px 5px #555;
+                cursor: pointer;
+            }
+
+            .fa-chevron-left {
+                left: 5px;
+            }
+
+            .fa-chevron-right {
+                right: 5px;
+            }
+
+            .four-button {
+                text-align: center;
+                margin-top: 16px;
+            }
+
+            button {
+                background: rgb(0, 153, 255);
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin-right: 20px;
+                font-weight: bold;
+                border: none;
+            }
+
+            button.active {
+                background: rgb(7, 101, 163);
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="slideshow">
+            <img class="slide" src="FUNiX-10nguyentac-slide1.png" idx="0">
+            <img class="slide" src="funix-bai-dang-1024x620.jpg" idx="1">
+            <img class="slide" src="FUNiX-International-logo.png" idx="2">
+            <img class="slide" src="xisotop-1573806274.jpg" idx="3">
+
+            <i class="fa fa-chevron-left fa-4x"></i>
+            <i class="fa fa-chevron-right fa-4x"></i>
+
+            <div class="four-button">
+                <button class="active" idx="0">1</button>
+                <button idx="1">2</button>
+                <button idx="2">3</button>
+                <button idx="3">4</button>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function () {
+                var index = 0;
+
+                //khi click vao cac nut se chuyen sang cac anh tuong ung
+                $("button").click(function () {
+                    index = $(this).attr("idx");
+
+                    img(index);
+                });
+
+                //khi click vao nut next se chuyen sang anh tiep theo
+                $(".fa-chevron-right").click(function () {
+                    index++;
+                    //neu dang o anh so 4, click vao next se chuyen sang anh so 1 ưng voi index = 0
+                    if (index > 3) {
+                        index = 0;
+                    }
+
+                    img(index);
+                });
+
+                //khi click vao nut previous se chuyen sang anh truoc
+                $(".fa-chevron-left").click(function () {                    
+                    index--;
+                    //neu dang o anh so 1, click vao previous se chuyen sang anh so 4 ung voi index= 3
+                    if (index < 0) {
+                        index = 3;
+                    }
+        
+                    img(index);
+                });
+
+            });
+
+            function img(index) {
+                $(".slide").hide();//an tat ca cac anh
+                $(".slide").eq(index).fadeIn(500);//hien anh co chi muc la index
+                $("button").removeClass("active");//xoa tat ca cac nut co active
+                $("button").eq(index).addClass("active");//dat active cho nut co chi muc la index
+            };
+        </script>
+    </body>
+
+</html>
