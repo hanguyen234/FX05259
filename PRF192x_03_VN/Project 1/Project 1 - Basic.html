@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <title></title>
+        <meta charset="UTF-8" name="" content="">
+        <style>
+            
+        </style>
+    </head>
+
+    <body>
+        
+        <script>
+            function compare(heightToan, weightToan, heightMinh, weightMinh){
+                var heightToan; //chieu cao cua Toan
+                var weightToan; //can nang cua Toan
+                var heightMinh; //chieu cao cua Minh
+                var weightMinh; //can nang cua Minh
+                var bmiToan = weightToan / (heightToan ** 2);//cong thuc bmi cua Toan
+                var bmiMinh = weightMinh / (heightMinh ** 2);//cong thuc bmi cua Minh
+                if (heightToan <= 0  || weightToan <= 0 || heightMinh <= 0 || weightMinh <= 0){
+                    console.log = "Vui long nhap lai";
+                }  //neu 1 trong 4 bien <= 0 thi nhap lai
+
+                else if (bmiToan < bmiMinh){
+                    console.log("BMI cua Toan la " + bmiToan.toFixed(5));
+                    console.log("BMI cua Minh la " + bmiMinh.toFixed(5));
+                    console.log("BMI cua Toan nho hon cua Minh");
+                }
+
+                else if (bmiToan > bmiMinh){
+                    console.log("BMI cua Toan la " + bmiToan.toFixed(5));
+                    console.log("BMI cua Minh la " + bmiMinh.toFixed(5));
+                    console.log("BMI cua Toan lon hon cua Minh");
+                }
+
+                else {
+                    console.log("BMI cua Toan la " + bmiToan.toFixed(5));
+                    console.log("BMI cua Minh la " + bmiMinh.toFixed(5));
+                    console.log("BMI cua Toan bang cua Minh");
+                }
+            };
+            
+            compare(1.8, 70, 1.7, 60);
+        </script>
+    </body>
+</html>
