@@ -1,0 +1,103 @@
+.header-nav {
+    width: 100%; background-color: blue; padding: 20px ;
+}
+
+.header-nav-div {
+    margin: 0px 20%;
+}
+
+.header-nav-div a {
+    color: white; text-decoration: none;
+}
+
+.header-nav-div li {
+    display: inline-block;       
+}
+
+.main-section1 {
+    height: 450px; margin: 20px 20%; font-size: 20px;
+}
+
+.main-section1-img {
+    width: 50%; float: right; margin-left: 20px;
+}
+
+.main-section2-div1 {
+    height: 485px; float: left; width: 50%;
+}
+
+.main-section3 {
+    width: 100%;
+}
+
+.main-section3 a {
+    text-decoration: none; color: black;
+}
+
+.main-section2-div2 {
+    height: 485px; float: right;width: 50%;
+}
+
+.main-section2-div2-img1 {
+    width: 50px; height: 50px; border-radius: 50%; float: left;
+}
+
+.main-section2-div2-img2 {
+    width: 50px; height: 50px; border-radius: 50%; float: left;
+}
+
+.main-section3-div {
+    float: left; width: 32%; border: 1px solid gray; margin-right: 10px;
+}
+
+.main-section4-img {
+    height: 180px; width: 50%; float: right; margin-left: 20px;
+}
+
+.main-section4-button {
+    background-color: orange; display: block; width:150px; margin: auto; padding: 10px; border: none; color: white;
+}
+
+.footer {
+    width: 100%; background-color: black; color: white;
+}
+
+.footer-div {
+    height: 200px; width: 60%; margin-left: 20%;padding-top: 20px;
+}
+
+.footer-div a {
+    text-decoration: none; color: white;
+}
+
+.footer-div ul {
+    list-style-type: none; padding: 0px;
+}
+
+.footer-div1-div2 {
+    width: 25%; float: left;
+}
+
+.footer-div3 {
+    width: 23%; float: left;
+}
+
+.footer-div4 {
+    width: 27%; float: left;
+}
+
+.footer-end {
+    text-align: center; padding-bottom: 20px;
+}
+
+.container {
+    position: relative; color: white;    
+}
+
+.top-left {
+    position: absolute; top: 8px; left: 50%;
+}
+
+.top-left a {
+    color: white; text-decoration: none;
+}
