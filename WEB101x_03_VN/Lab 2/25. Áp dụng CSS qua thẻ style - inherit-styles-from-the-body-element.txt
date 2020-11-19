@@ -1,0 +1,13 @@
+<style>
+  body {
+    color: green;
+    font-family: monospace;
+  }
+  .inherit body{
+    color: inherit;
+    font-family: inherit;
+  }
+</style>
+<body>
+  <h1 class="inherit">Hello World</h1>
+</body>
