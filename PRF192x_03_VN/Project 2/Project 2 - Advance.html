@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="">
+
+    <head>
+        <title>Project 2 - PRF192x_03_VN</title>
+        <meta charset="UTF-8" name="" content="">
+        <style>
+    
+            *{
+                box-sizing: border-box;
+            }
+
+            .calculator {
+                border: 1px solid black;
+                border-radius: 5px;
+                position: absolute;
+                top: 20%;
+                left: 20%;
+                width: 400px;                  
+            }
+
+            .display {
+                width: 100%;
+                height: 80px;
+                font-size: 50px;                
+                border: none;
+                background-color: red;
+                color: white;
+                text-align: right;
+                padding-right: 20px;
+                padding-left: 10px;                
+            }
+
+            .node {
+                display: grid;
+                grid-template-columns: 74px 74px 74px 74px ;
+                grid-gap: 20px;
+                padding: 20px;
+            }
+            
+            input[type="button"] {
+                height: 60px;
+                background-color: white;
+                border-radius: 10px;
+                border: 1px solid #c4c4c4;
+                font-size: 40px;     
+                cursor: pointer;       
+            }
+
+            input[type="button"]:hover {
+                background-color: orange;
+            }
+            
+            input[type="button"].operator {
+                color: blue;
+            }
+            
+            input[type="button"].delete {
+                background-color: red;
+                color: white;
+            }
+
+            input[type="button"].delete:hover {
+                background-color: green;
+            }
+
+            input[type="button"].equal {
+                background-color: blue;
+                color: white;
+                height: 100%;
+                grid-area: 3 / 4 / 6 / 5;
+            }
+
+            input[type="button"].equal:hover {
+                background-color: #4e9ed4;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="calculator">           
+            <input type="text" class="display" value="" id="screen" disabled />
+
+            <div class="node">
+
+                <input type="button" value="+" onclick="key('+')" class="operator" />
+                <input type="button" value="-" onclick="key('-')" class="operator" />
+                <input type="button" value="x" onclick="key('*')" class="operator" />
+                <input type="button" value=":" onclick="key('/')" class="operator" />
+
+
+                <input type="button" value="7" onclick="key('7')" />
+                <input type="button" value="8" onclick="key('8')" />
+                <input type="button" value="9" onclick="key('9')" />
+                <input type="button" value="%" onclick="key('%')" class="operator" />
+
+
+                <input type="button" value="4" onclick="key('4')" />
+                <input type="button" value="5" onclick="key('5')" />
+                <input type="button" value="6" onclick="key('6')" />
+                
+
+                <input type="button" value="1" onclick="key('1')" />
+                <input type="button" value="2" onclick="key('2')" />
+                <input type="button" value="3" onclick="key('3')" />
+
+
+                <input type="button" value="0" onclick="key('0')" />
+                <input type="button" value="." onclick="key('.')" />
+                <input type="button" value="C" onclick="cancel()" class="delete" />
+                <input type="button" value="=" onclick="result()" class="equal" />
+
+            </div>
+        </div>
+        
+        <script>
+            //hien thi cac so va phep tinh tren man hinh khi nhan vao cac nut tuong ung
+            function key(x) {           
+                document.getElementById("screen").value += x;
+            };
+
+            //hien thi ket qua
+            function result() {
+                let y = document.getElementById("screen").value;//lay cac ky tu tren man hinh gan vao y
+                let z = eval(y);//ham eval thuc thi bieu thuc y
+                document.getElementById("screen").value = z;//dua ra ket qua cua phep tinh
+            };
+
+            //nut c dung de xoa cac ky tu tren man hinh
+            function cancel() {
+                document.getElementById("screen").value = "";
+            };
+        </script>
+
+    </body>
+
+</html>

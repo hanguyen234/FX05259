@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <title>Project 2 - PRF192x_03_VN</title>
+        <meta charset="UTF-8" name="" content="">
+        <style>
+
+            h3{
+                text-align: center;
+            }
+
+            div {
+                border: 1px solid gray; padding: 10px; width: 390px;
+            }
+
+            .giatri1 {
+                width: 100px; height: 30px; margin-right: 110px; margin-left: 20px;
+            }
+
+            .giatri2 {
+                width: 100px; height: 30px;
+            }
+
+            .formbutton {
+                width: 50px; height: 50px; margin: 12px;
+            }
+
+            p {
+                padding: 10px ;margin-left: 110px; border: 1px solid gray; height: 30px; width: 120px; text-align: center;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <h3>Tính toán</h3>
+            
+            <form>
+                <input class="giatri1" type="text" id="gt1" placeholder="Gia tri so 1">
+                <input class="giatri2" type="text" id="gt2" placeholder="Gia tri so 2">
+                <br><br>                               
+                <input class="formbutton" type="button" value="+" onclick="plus()">
+                <input class="formbutton" type="button" value="-" onclick="subtract()">
+                <input class="formbutton" type="button" value="x" onclick="multiply()">
+                <input class="formbutton" type="button" value=":" onclick="divide()">
+                <input class="formbutton" type="button" value="^" onclick="exponent()">
+                <br>
+                
+                <p id="result"></p>
+            </form><br>
+            
+            
+        </div>
+        
+        <script>
+            //phep cong
+            function plus(){              
+                var gt1 = Number(document.getElementById("gt1").value);//gia tri 1
+                var gt2 = Number(document.getElementById("gt2").value);//gia tri 2
+                var gt3 = gt1 + gt2;
+                document.getElementById("result").innerHTML = gt3;
+            }
+            //phep tru
+            function subtract(){              
+                var gt1 = Number(document.getElementById("gt1").value);
+                var gt2 = Number(document.getElementById("gt2").value);
+                var gt3 = gt1 - gt2;
+                document.getElementById("result").innerHTML = gt3;
+            }
+            //phep nhan
+            function multiply(){              
+                var gt1 = Number(document.getElementById("gt1").value);
+                var gt2 = Number(document.getElementById("gt2").value);
+                var gt3 = gt1 * gt2;
+                document.getElementById("result").innerHTML = gt3;
+            }
+            //phep chia
+            function divide(){              
+                var gt1 = Number(document.getElementById("gt1").value);
+                var gt2 = Number(document.getElementById("gt2").value);
+                var gt3 = gt1 / gt2;
+                document.getElementById("result").innerHTML = gt3.toFixed(5);
+            }
+            //phep luy thua
+            function exponent(){              
+                var gt1 = Number(document.getElementById("gt1").value);
+                var gt2 = Number(document.getElementById("gt2").value);
+                var gt3 = gt1 ** gt2;
+                document.getElementById("result").innerHTML = gt3;
+            }
+        </script>
+        
+    </body>
+</html>
