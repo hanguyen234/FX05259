@@ -1,0 +1,13 @@
+﻿- Nhiệm vụ 5: Nhiệm vụ này yêu cầu bạn đảo ngược giá trị từng kênh màu ở nửa dưới
+
+image = new SimpleImage("flowers.jpg");
+
+for (pixel: image) {
+  if(pixel.getY() > image.getHeight()/2){
+    pixel.setRed(255 - pixel.getRed());
+    pixel.setGreen(255 - pixel.getGreen());
+    pixel.setBlue(255 - pixel.getBlue());
+  }
+}
+
+print(image);

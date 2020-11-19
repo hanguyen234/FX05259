@@ -1,0 +1,11 @@
+﻿- Nhiệm vụ 6: Xóa kênh màu xanh lá cây (green) ở nửa dưới
+
+image = new SimpleImage("flowers.jpg");
+
+for (pixel: image) {
+  if(pixel.getY() > image.getHeight()/2){
+    pixel.setGreen(0);
+  }
+}
+
+print(image);

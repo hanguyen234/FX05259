@@ -1,0 +1,11 @@
+﻿- Nhiệm vụ 3: Đẩy tông xanh da trời (blue) của ảnh flowers.jpg lên gấp 2 lần ở nửa dưới
+
+image = new SimpleImage("flowers.jpg");
+
+for (pixel: image) {
+  if(pixel.getY() > image.getHeight()/2){
+    pixel.setBlue(pixel.getBlue() * 2);
+  }
+}
+
+print(image);
