@@ -70,7 +70,7 @@ public class GradeStudent {
     public static double finalTerm() {
         System.out.println("Final:");
         System.out.print("Weight (0-100)? ");
-        weightFin = numRange(0, 100, "Weight (0-100)? ");
+        weightFin = numRange(0, 100-weightMid, "Weight (0-100)? ");
         System.out.print("Score earned? ");
         int scoreEarn = numRange(0, Integer.MAX_VALUE, "Score earned ");
         System.out.print("Were scores shifted (1=yes, 2= no)? ");
