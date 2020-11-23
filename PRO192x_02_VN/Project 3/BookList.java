@@ -31,9 +31,26 @@ public class BookList {
     public void add() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter information for the new book:");
-
         System.out.print("ID: ");
-        String id = input.nextLine();
+        boolean isEqualId = true;
+        String id;
+        do {
+            id = input.nextLine();
+            // kiem tra Id cua sach nhap vao co trung nhau khong
+            for (Book book : myBooks) {
+                if (book.getId().equalsIgnoreCase(id)) {
+                    System.out.println("(---ID already exists---)");
+                    System.out.print("ID: ");
+                    isEqualId = true;
+                    break;
+                } else {
+                    isEqualId = false;
+                }
+            }
+            if (myBooks.isEmpty()) {
+                isEqualId = false;
+            }
+        } while (isEqualId);
 
         System.out.print("Title: ");
         String title = input.nextLine();
